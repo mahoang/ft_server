@@ -13,15 +13,8 @@ RUN apt-get -y install nginx \
 && apt-get -y install php php7.3-fpm php-mysql php-cli php-mbstring
 
 #copy
-COPY ./srcs/mysql_config.sql /home/
-COPY ./srcs/nginx_conf ./home/
-COPY ./srcs/start.sh ./home/
-COPY ./srcs/latest.tar.gz ./home/
-COPY ./srcs/self-signed.conf ./home/
-COPY ./srcs/wp-config.php ./home/
-COPY ./srcs/phpMyAdmin-4.9.4.tar.gz ./home/
-COPY ./srcs/config.inc.php ./home/
-COPY ./srcs/wordpress.sql ./home/
+COPY ./srcs/* /home/
+
 
 #nginx
 RUN service nginx start \
